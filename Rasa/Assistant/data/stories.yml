@@ -1,0 +1,69 @@
+version: "3.1"
+
+stories:
+
+# Explainer of rules when greeted or asked for help
+
+- story: welcome adventurer
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+# Prompter Agent Stories
+
+- story: move the player
+  steps:
+  - intent: move_player
+  - action: utter_move_player
+  - action: send_info
+  - action: action_reset_all_slots
+
+- story: move the camera
+  steps:
+  - intent: move_camera
+  - action: utter_move_camera
+  - action: send_info
+  - action: action_reset_all_slots
+
+- story: take an object
+  steps:
+  - intent: take_object
+  - action: utter_take_object
+  - action: send_info
+  - action: action_reset_all_slots
+
+- story: open a chest
+  steps:
+  - intent: open_chest
+  - action: utter_open_chest
+  - action: send_info
+  - action: action_reset_all_slots
+
+- story: hit an enemy
+  steps:
+  - intent: hit
+  - action: utter_hit
+  - action: send_info
+  - action: action_reset_all_slots
+
+- story: avoid
+  steps:
+  - intent: avoid
+  - action: utter_avoid
+  - action: send_info
+  - action: action_reset_all_slots
+
+- story: loot
+  steps:
+  - intent: loot
+  - action: utter_loot
+  - action: send_info
+  - action: action_reset_all_slots
+
+- story: rest
+  steps:
+  - intent: rest
+  - action: utter_rest
+  - action: send_info
+  - action: action_reset_all_slots
+

@@ -1,0 +1,159 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - what should i do
+    - help
+    - what can i do
+    - help me
+    - can you help me
+    - it doesn't look good
+    - i'm gonna die
+    - i will die
+    - i am going to die
+    - am i going to die
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+
+# Prompter Agent Language
+
+- lookup: object
+  examples: |
+    - book
+    - bottle
+    - sword
+    - shield
+    - armor
+    - chestplate
+    - helmet
+    - weapon
+    - gold
+
+- lookup: chest
+  examples: |
+    - box
+    - chest
+    - crate
+    - treasure
+    - treasure chest
+    - treasure box
+    - treasure crate
+
+- lookup: direction
+  examples: |
+    - forward
+    - right
+    - left
+    - backward
+    - up
+    - around
+    - down
+
+- lookup: monster
+  examples: |
+    - skeleton
+    - monster
+    - enemy
+    - fiend
+    - foe
+
+- lookup: time
+  examples: |
+    - a little
+    - more
+    - until full
+
+- intent: move_player
+  examples: |
+    - move [forward](direction)
+    - go [forward](direction)
+    - step [forward](direction)
+    - run [forward](direction)
+
+- intent: move_camera
+  examples: |
+    - look [forward](direction)
+    - observe [forward](direction)
+    - see [forward](direction)
+    - inspect [forward](direction)
+
+- intent: take_object
+  examples: |
+    - take the [book](object)
+    - equip the [sword](object)
+    - use the [armor](object)
+    - equip the [helmet](object)
+
+- intent: open_chest
+  examples: |
+    - lockpick the [chest](chest)
+    - open the [box](chest)
+    - unlock the [crate](chest)
+
+- intent: hit
+  examples: |
+    - hit the [monster](monster)
+    - attack the [foe](monster)
+    - slash the [fiend](monster)
+    - kill the [enemy](monster)
+    - bonk the [skeleton](monster)
+
+- intent: avoid
+  examples: |
+    - avoid
+    - guard
+    - parry
+    - cover
+
+- intent: loot
+  examples: |
+    - loot the [fiend](monster)
+    - search the [foe](monster)
+    - rob the [monster](monster)
+    - snatch the [skeleton](monster)
+
+- intent: rest
+  examples: |
+    - rest [a little](time)
+    - sleep [more](time)
+    - heal [more](time)
+    - regenerate [more](time)
+    - recuperate [more](time)
+    - recover [more](time)
+    - rest 
+    - sleep 
+    - heal 
+    - regenerate
+    - recuperate
+    - recover

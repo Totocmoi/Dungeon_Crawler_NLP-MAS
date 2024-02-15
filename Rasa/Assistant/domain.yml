@@ -1,0 +1,80 @@
+version: "3.1"
+
+intents:
+  - greet
+  - affirm
+  - deny
+  - move_player
+  - move_camera
+  - take_object
+  - open_chest
+  - hit
+  - avoid
+  - loot
+  - rest
+
+entities:
+  - object
+  - chest
+  - direction
+  - monster
+  - time
+
+slots:
+  object:
+    type: text
+    influence_conversation: False
+    mappings:
+      - type: from_entity
+        entity: object
+  direction:
+    type: text
+    influence_conversation: False
+    mappings:
+      - type: from_entity
+        entity: direction 
+  time:
+    type: text
+    influence_conversation: False
+    mappings:
+      - type: from_entity
+        entity: time
+
+actions:
+  - action_reset_all_slots
+  - send_info
+
+responses:
+  utter_greet:
+  - text: "Welcome in the Dungeon of MAS ! Here you can call me anytime you need help for me to repeat this. To move, you can just type \"move\" followed by the direction you want. Pay attention that the player will move according to his actual orientation and not the one of the camera. \nYou can also \"look\", \"hit\", \"avoid\" with a lot of synonyms (for example you can type \"go\" and it will move).\nPro tip: don't forget to \"rest\"..."
+  
+  utter_move_player:
+  - text: "Move player intent here, received: {direction}!"
+
+  utter_move_camera:
+  - text: "Move camera intent here, received: {direction}!"
+
+  utter_take_object:
+  - text: "Take object intent here, received: {object}"
+
+  utter_open_chest:
+  - text: "Let's open the chest!"
+
+  utter_hit:
+  - text: "ATTACK LAUNCHED"
+
+  utter_avoid:
+  - text: "Take cover everyone!"
+
+  utter_loot:
+  - text: "Did it have anything usefull?"
+
+  utter_rest:
+  - text: "Time for some sleep !"
+
+  utter_wth:
+  - text: "I didn't understand that."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
